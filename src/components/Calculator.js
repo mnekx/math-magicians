@@ -6,27 +6,25 @@ const Calculator = () => {
   const [next, setNext] = useState('');
   const [operation, setOperation] = useState('');
   const [total, setTotal] = useState(null);
+  let resultObj = {};
+  const handleClick = (e) => {
+    resultObj = calculate({ next, operation, total }, e.target.innerHTML);
+    setNext(resultObj.next);
+    setTotal(resultObj.total);
+    setOperation(resultObj.operation);
+  };
 
   useEffect(() => {
     let buttons = document.querySelectorAll('.g-item');
-    let resultObj = {};
+
     buttons = Array.from(buttons);
     buttons.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        resultObj = calculate({ next, operation, total }, e.target.innerHTML);
-        setNext(resultObj.next);
-        setTotal(resultObj.total);
-        setOperation(resultObj.operation);
-      });
+      button.addEventListener('click', handleClick);
     });
 
     return () => {
       buttons.forEach((button) => {
-        button.removeEventListener('click', () => {
-          setNext(resultObj.next);
-          setTotal(resultObj.total);
-          setOperation(resultObj.operation);
-        });
+        button.removeEventListener('click', handleClick);
       });
     };
   });
