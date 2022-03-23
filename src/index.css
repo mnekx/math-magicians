@@ -1,3 +1,11 @@
+main {
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
 
 .d-grid {
   display: grid;
@@ -34,4 +42,8 @@
 .orange {
   background-color: orangered;
   color: black;
+}
+
+.d-flex {
+  display: flex;
 }

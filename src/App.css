@@ -1,3 +1,10 @@
 * {
   box-sizing: border-box;
 }
+
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}

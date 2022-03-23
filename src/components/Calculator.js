@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Display from './Display';
 import calculate from '../logic/calculate';
+import '../assets/styles/calculator.css';
 
 const Calculator = () => {
   const [next, setNext] = useState('');
@@ -30,103 +31,56 @@ const Calculator = () => {
   });
 
   return (
-    <div style={{ width: '75vw', height: '75vh' }}>
+    <main className="d-flex calculator">
+      <h2>Lets do some Math!</h2>
       <div className="d-grid gray">
         <Display next={next} operation={operation} total={total} />
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           AC
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           +/-
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           %
         </button>
-        <button
-          type="button"
-          className="g-item orange"
-        >
+        <button type="button" className="g-item orange">
           &divide;
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           7
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           8
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           9
         </button>
-        <button
-          type="button"
-          className="g-item orange"
-        >
+        <button type="button" className="g-item orange">
           x
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           4
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           5
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           6
         </button>
-        <button
-          type="button"
-          className="g-item orange"
-        >
+        <button type="button" className="g-item orange">
           -
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           1
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           2
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           3
         </button>
-        <button
-          type="button"
-          className="g-item orange"
-        >
+        <button type="button" className="g-item orange">
           +
         </button>
         <button
@@ -136,20 +90,14 @@ const Calculator = () => {
         >
           0
         </button>
-        <button
-          type="button"
-          className="g-item white"
-        >
+        <button type="button" className="g-item white">
           .
         </button>
-        <button
-          type="button"
-          className="g-item orange"
-        >
+        <button type="button" className="g-item orange">
           =
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 
